@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Team Kanban Board</title>
+  <style>
+    body { font-family: Arial; background: #f5f5f5; margin: 0; padding: 20px; }
+    h1 { text-align: center; }
+    .board { display: flex; gap: 20px; justify-content: center; }
+    .column {
+      background: white;
+      padding: 10px;
+      width: 250px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+    .column h2 { text-align: center; }
+    .task {
+      background: #e3e3e3;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 6px;
+      cursor: grab;
+    }
+    #newTaskInput { width: 200px; padding: 8px; }
+    #addTaskBtn { padding: 8px; }
+  </style>
+</head>
+<body>
+
+<h1>Team Kanban Board</h1>
+
+<div style="text-align:center;">
+  <input id="newTaskInput" placeholder="New task...">
+  <button id="addTaskBtn">Add Task</button>
+</div>
+
+<div class="board">
+  <div class="column" data-column="todo">
+    <h2>To‑do</h2>
+    <div class="taskList" id="todo"></div>
+  </div>
+
+  <div class="column" data-column="inprogress">
+    <h2>In Progress</h2>
+    <div class="taskList" id="inprogress"></div>
+  </div>
+
+  <div class="column" data-column="review">
+    <h2>In Review</h2>
+    <div class="taskList" id="review"></div>
+  </div>
+
+  <div class="column" data-column="complete">
+    <h2>Complete</h2>
+    <div class="taskList" id="complete"></div>
+  </div>
+</div>
+
+<script src="kanban.js"></script>
+</body>
+</html>
